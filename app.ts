@@ -1,19 +1,17 @@
-console.log("Specifics data type in ts");
+console.log("other data type");
 
-const person: {
-  name: string;
-  height: number;
-  hobbies: string[];
-  roles: [number, string]; //defining tuple with 2 element array
-} = {
-  name: "Laue",
-  height: 10,
-  hobbies: ["racing", "reading"],
-  roles: [1, "author"],
-};
+let userInput: unknown;
+userInput = "anything";
+userInput = 5;
 
-console.log(person.name);
+// this wont work but type any will
+let useName: string;
+// useName = userInput; error
 
-for (const hobby of person.hobbies) {
-  console.log(hobby.toUpperCase());
+// this block return never type which will never return anythin
+// an infinite loop is also of never return type
+function generateErr(msg: string, code: number): never {
+  throw { message: msg, errorCode: code };
 }
+
+generateErr("Testing never type", 404);

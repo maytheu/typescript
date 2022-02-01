@@ -1,11 +1,12 @@
-console.log("Specifics data type in ts");
-var person = {
-    name: "Laue",
-    height: 10,
-    hobbies: ["racing", "reading"]
-};
-console.log(person.name);
-for (var _i = 0, _a = person.hobbies; _i < _a.length; _i++) {
-    var hobby = _a[_i];
-    console.log(hobby.toUpperCase());
+console.log("other data type");
+var userInput;
+userInput = "anything";
+userInput = 5;
+// this wont work but type any will
+var useName;
+// useName = userInput; error
+// this block return never type
+function generateErr(msg, code) {
+    throw { message: msg, errorCode: code };
 }
+generateErr("Testing never type", 404);
