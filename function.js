@@ -1,9 +1,8 @@
 "use strict";
 console.log("function and types");
 const add = (n1, n2) => n1 + n2;
-let funcType; //is a fuc type with return number
+let funcType;
 funcType = add;
-//function with cb
 function handleCb(n1, n2, cb) {
     let result = n1 + n2;
     cb(result);

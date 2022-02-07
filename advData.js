@@ -10,7 +10,7 @@ var Level;
 (function (Level) {
     Level[Level["ADMIN"] = 0] = "ADMIN";
     Level[Level["AUTHOR"] = 1] = "AUTHOR";
-})(Level || (Level = {})); //you can add ADMIN=5
+})(Level || (Level = {}));
 console.log(person.name);
 for (const hobby of person.hobbies) {
     console.log(hobby.toUpperCase());
