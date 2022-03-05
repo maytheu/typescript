@@ -6,9 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="app.css"/>
     <title>Intro to Ts</title>
-    <script src="dist/bundle.js" defer></script>
+    <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfoiGlbkUFLQgPR2s3he7pEE8JLI_X8Kc">
+</script>
+<script src="dist/bundle.js" defer></script>
   </head>
   <body>
-    
+    <div id="map"><p>Please enter an address</p></div>
+    <form>
+      <input type="text" id="address"/>
+      <button type="submit">Search</button></button>
+    </form>
   </body>
 </html>
