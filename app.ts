@@ -4,7 +4,7 @@ import axios from "axios";
 const form = document.querySelector("form")!;
 const addressInput = document.getElementById("address")! as HTMLInputElement;
 
-const GOOGLE_KEY: string = "AIzaSyDfoiGlbkUFLQgPR2s3he7pEE8JLI_X8Kc";
+const GOOGLE_KEY: string = "AIzaSyCIaAc2c5M3VpbCH6PPq_guwy9lHuowXOs";
 
 // response type from google
 type GoogleResponse = {
