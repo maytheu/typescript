@@ -1,30 +1,37 @@
 <h1>Password Generator</h1>
 <div>
-<label>Enter Length</label>
+  <label>Enter Length</label>
 
-<input />
+  <input (input)="inputLength($event.target)" />
 </div>
 
 <div>
   <label>Use Letters</label>
-  <input type="checkbox"/>
+  <input (click)="addLetters()" type="checkbox" />
 </div>
 
 <div>
   <label>Use Numbers</label>
-  <input type="checkbox"/>
+  <input (click)="addNumbers()" type="checkbox" />
 </div>
 
 <div>
   <label>Use Symbols</label>
-  <input type="checkbox"/>
-</div>  
+  <input (click)="addSymbols()" type="checkbox" />
+</div>
 
 <div>
-  <button (click)="onButtonClick ()">Generate</button>
+  <button
+    (click)="onButtonClick()"
+    [disabled]="
+      !(passwordLength && (includeLetters || includeNumbers || includeNumbers))
+    "
+  >
+    Generate
+  </button>
 </div>
 
 <div>
   <label>Your Password</label>
-  <input readonly [value]="password"/>
+  <input readonly [value]="password" />
 </div>
