@@ -4,14 +4,8 @@ import { CommonModule } from '@angular/common';
 import { ElementsRoutingModule } from './elements-routing.module';
 import { ElementHomeComponent } from './element-home/element-home.component';
 
-
 @NgModule({
-  declarations: [
-    ElementHomeComponent
-  ],
-  imports: [
-    CommonModule,
-    ElementsRoutingModule
-  ],exports:[ElementHomeComponent]
+  declarations: [ElementHomeComponent],
+  imports: [CommonModule, ElementsRoutingModule],
 })
-export class ElementsModule { }
+export class ElementsModule {}
