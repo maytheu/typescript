@@ -1,0 +1,12 @@
+<table class="ui table" [ngClass]="cell ? 'celled' : ''" [ngClass]="striped">
+  <thead>
+    <tr>
+      <th *ngFor="let title of header">{{ title.label }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let info of data">
+      <td *ngFor="let title of header">{{ info[title.key] }}</td>
+    </tr>
+  </tbody>
+</table>
