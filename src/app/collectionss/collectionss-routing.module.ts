@@ -13,7 +13,8 @@ const routes: Routes = [
       {
         path: '',
         component: BiographyComponent,
-      },{
+      },
+      {
         path: 'companies',
         component: CompaniesComponent,
       },
