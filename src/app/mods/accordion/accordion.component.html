@@ -1,0 +1,17 @@
+<div class="ui styled fluid accordion">
+  <ng-container *ngFor="let item of items; let i = index"
+    ><div
+      class="title"
+      [ngClass]="{ active: indexItem === i }"
+      (click)="toggle(i)"
+    >
+      <i class="dropdown icon"></i>
+      {{ item.title }}
+    </div>
+    <div class="content" [ngClass]="{ active: indexItem === i }">
+      <p class="transition">
+        {{ item.msg }}
+      </p>
+    </div></ng-container
+  >
+</div>
