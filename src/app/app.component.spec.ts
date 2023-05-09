@@ -4,9 +4,7 @@ import { AppComponent } from './app.component';
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [
-        AppComponent
-      ],
+      declarations: [AppComponent],
     }).compileComponents();
   });
 
@@ -16,16 +14,43 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'pswdgen'`, () => {
+  it('should passwordlength = 25', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('pswdgen');
+
+    app.inputLength({ value: '25' });
+
+    expect(app.passwordLength).toEqual(25);
   });
 
-  it('should render title', () => {
+  it('should includesymbols to be true', () => {
     const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('pswdgen app is running!');
+    const app = fixture.componentInstance;
+
+    const initialSymbol = app.includeSymbols;
+    app.addSymbols();
+    const finialSymbol = app.includeSymbols;
+
+    expect(finialSymbol).not.toEqual(initialSymbol);
+  });
+
+  it('should includenumber to true', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+
+    const initialumber = app.includeNumbers;
+    app.addNumbers();
+    const finialNumber = app.includeNumbers;
+
+    expect(finialNumber).not.toEqual(initialumber);
+  });
+
+  it('should add letter to true', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+
+    app.addLetters();
+
+    expect(app.includeLetters).not.toEqual(false);
   });
 });
