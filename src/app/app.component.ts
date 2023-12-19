@@ -13,6 +13,7 @@ export class AppComponent {
   includeNumbers: boolean = false;
   includeSymbols: boolean = false;
   passwordLength: number = 0;
+  copyText = 'copy';
 
   onButtonClick() {
     const letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -56,5 +57,20 @@ export class AppComponent {
     if (!isNaN(parseVal)) {
       this.passwordLength = parseVal;
     }
+  }
+
+  clipboardCopy() {
+    const selBox = document.createElement('textarea');
+    selBox.style.position = 'fixed';
+    selBox.style.left = '0';
+    selBox.style.top = '0';
+    selBox.style.opacity = '0';
+    selBox.value = this.password;
+    document.body.appendChild(selBox);
+    selBox.focus();
+    selBox.select();
+    document.execCommand('copy');
+    document.body.removeChild(selBox);
+    this.copyText = 'copied';
   }
 }

@@ -5,7 +5,11 @@
 
       <div class="field">
         <label>Length</label>
-        <input class="input" (input)="inputLength($event.target)" />
+        <input
+          class="input"
+          type="number"
+          (input)="inputLength($event.target)"
+        />
       </div>
 
       <div class="field">
@@ -50,7 +54,12 @@
 
       <div class="box" *ngIf="password">
         <label>Your Password</label>
-        <input class="input" [value]="password" />
+        <div class="field is-horizontal">
+          <input class="input" [value]="password" />
+          <p (click)="clipboardCopy()" style="margin-left: 1rem; cursor: pointer;">
+            {{ copyText }}
+          </p>
+        </div>
       </div>
     </div>
   </div>
